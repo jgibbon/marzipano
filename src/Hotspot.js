@@ -182,7 +182,13 @@ Hotspot.prototype._update = function() {
     if (this._perspective.radius) {
       // Hotspots that are embedded in the panorama may be visible even when
       // positioned behind the camera.
-      isVisible = true;
+      view.coordinatesToScreen(params, position);
+      x = position.x;
+      y = position.y;
+
+      if (x != null && y != null) {
+        isVisible = true;
+      }
       this._setEmbeddedPosition(view, params);
     } else {
       // Regular hotspots are only visible when positioned in front of the
