@@ -188,8 +188,8 @@ Hotspot.prototype._update = function() {
 
       if (x != null && y != null) {
         isVisible = true;
+        this._setEmbeddedPosition(view, params);
       }
-      this._setEmbeddedPosition(view, params);
     } else {
       // Regular hotspots are only visible when positioned in front of the
       // camera. Note that they may be partially visible when positioned outside
